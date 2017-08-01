@@ -17,7 +17,7 @@ class Module:
                             'You can put one of the below commands into your powershell profile so powercat is automatically'
 			    'loaded when powershell starts..'),
             # True if the module needs to run in the background
-            'Background' : False,
+            'Background' : True,
 
             # File extension to save the file as
             'OutputExtension' : None,
@@ -43,6 +43,11 @@ class Module:
         self.options = {
             # format:
             #   value_name : {description, required, default_value}
+			'Agent' : {
+                'Description'   :   'Agent to run module on.',
+                'Required'      :   True,
+                'Value'         :   ''
+            },
             'l' : {
                 'Description'   :   'Switch. Listen for a connection',
                 'Required'      :   False,
@@ -61,7 +66,7 @@ class Module:
             'e' : {
                 'Description'   :   'Execute. (GAPING_SECURITY_HOLE) ',
                 'Required'      :   False,
-                'Value'         :   'reverse_https'
+                'Value'         :   ''
             },
             'ep' : {
                 'Description'   :   'Switch. Execute Powershell.',
