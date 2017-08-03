@@ -28,8 +28,9 @@ class Module:
             # True if the method doesn't touch disk/is reasonably opsec safe
             'OpsecSafe' : True,
             
-            # The minimum PowerShell version needed for the module to run
-            'MinPSVersion' : '2',
+            'Language' : 'powershell',
+
+            'MinLanguageVersion' : '2',
 
             # list of any references/other comments
             'Comments': [
