@@ -22,7 +22,7 @@ PowerShell Empire mod to post-exploit the World! Linux, MacOS, Windows.
        |_______||__|  |__| | _|      |__| | _| `._____||_______|  Mod: HackPlayers
        
        
-       282 modules currently loaded
+       283 modules currently loaded
        
        0 listeners currently active
        
@@ -48,11 +48,13 @@ PowerShell Empire mod to post-exploit the World! Linux, MacOS, Windows.
 &nbsp;&nbsp;&nbsp;**Get-ShellContent**&nbsp;&nbsp; (This script leverages modified strings2 to extract the input and output of any commandline process)  
 &nbsp;&nbsp;&nbsp;**Invoke-VNC**&nbsp;&nbsp; (This module loads a VNC server into RAM.)  
 &nbsp;&nbsp;&nbsp;**Powercat**&nbsp;&nbsp; (Netcat: The powershell version.)  
+&nbsp;&nbsp;&nbsp;**Invoke-WCMDump**&nbsp;&nbsp; (Credentials are only returned for the current user. :D)  
 
 # Stagers added
 &nbsp;&nbsp;&nbsp;**StarFighters JS**&nbsp;&nbsp;  
 &nbsp;&nbsp;&nbsp;**StarFighters VBS**&nbsp;&nbsp;  
 &nbsp;&nbsp;&nbsp;**StarFighters JS SCT**&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;**ASPX**&nbsp;&nbsp; 
 
 # Install in Debian
 
